@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "strict": true,
+        "lib": ["esnext"],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "esnext",
+        "outDir": "./distribution",
+        "noEmitOnError": true,
+        "declaration": false,
+        "removeComments": true,
+        "preserveConstEnums": false,
+        "sourceMap": false
+    },
+    "exclude": ["node_modules", "distribution"]
+}
