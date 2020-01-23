@@ -32,11 +32,17 @@ const api$ = combineRoutes('/', [
     b$,
 ])
 
-createServer({
-    port: 9999,
-    hostname: '0.0.0.0',
-    httpListener: httpListener({
-        effects: [api$],
-        middlewares: [logger$({silent: false})],
-    })
-})()
+const main = async () => {
+    const server = await createServer({
+        port: 9999,
+        hostname: '0.0.0.0',
+        httpListener: httpListener({
+            effects: [api$],
+            middlewares: [logger$({silent: false})],
+        })
+    });
+
+    server();
+}
+
+main();
