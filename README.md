@@ -14,8 +14,18 @@ npm start
 
 ## Expected
 
-Both respond with 3, the expected count.
+1. Both respond with 3, the expected count.
+2. Tailing the log, I can see
+```
+1
+2
+3
+```
 
 ## Actual
 
-`/a` responds with 1.
+1. `/a` responds with 1.
+2. Tailing the log for `/a`, I can see:
+```
+3
+```

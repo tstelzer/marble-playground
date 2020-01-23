@@ -9,7 +9,8 @@ const a$ = r.pipe(
     r.matchType('POST'),
     r.useEffect(Rx.pipe(
         use(multipart$()),
-        Ro.combineLatest(Rx.from([1, 2, 3])),
+        Ro.mergeMap(req => Rx.combineLatest(Rx.of(req), Rx.from([1, 2, 3]))),
+        Ro.tap(([_, n]) => console.log(n)),
         Ro.count(),
         Ro.map(body => ({status: 200, body})),
     )),
@@ -19,7 +20,8 @@ const b$ = r.pipe(
     r.matchPath('b'),
     r.matchType('POST'),
     r.useEffect(Rx.pipe(
-        Ro.combineLatest(Rx.from([1, 2, 3])),
+        Ro.mergeMap(req => Rx.combineLatest(Rx.of(req), Rx.from([1, 2, 3]))),
+        Ro.tap(([_, n]) => console.log(n)),
         Ro.count(),
         Ro.map(body => ({status: 200, body})),
     )),
