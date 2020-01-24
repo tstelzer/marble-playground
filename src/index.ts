@@ -7,7 +7,7 @@ import {multipart$} from '@marblejs/middleware-multipart';
 const a$ = r.pipe(
     r.matchPath('a'),
     r.matchType('POST'),
-    r.useEffect(Rx.pipe(
+    r.useEffect(req$ => req$.pipe(
         use(multipart$()),
         Ro.mergeMap(req => Rx.combineLatest(Rx.of(req), Rx.from([1, 2, 3]))),
         Ro.tap(([_, n]) => console.log(n)),
@@ -19,7 +19,7 @@ const a$ = r.pipe(
 const b$ = r.pipe(
     r.matchPath('b'),
     r.matchType('POST'),
-    r.useEffect(Rx.pipe(
+    r.useEffect(req$ => req$.pipe(
         Ro.mergeMap(req => Rx.combineLatest(Rx.of(req), Rx.from([1, 2, 3]))),
         Ro.tap(([_, n]) => console.log(n)),
         Ro.count(),
