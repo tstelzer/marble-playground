@@ -14,22 +14,22 @@
     "author": "Timm Stelzer <timmstelzer@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "@marblejs/core": "3.0.0-rc.1",
-        "@marblejs/middleware-body": "3.0.0-rc.1",
-        "@marblejs/middleware-cors": "3.0.0-rc.1",
-        "@marblejs/middleware-io": "3.0.0-rc.1",
-        "@marblejs/middleware-logger": "3.0.0-rc.1",
-        "@marblejs/middleware-multipart": "3.0.0-rc.1",
-        "fp-ts": "^2.3.1",
-        "io-ts": "^2.0.2",
-        "io-ts-types": "^0.5.3",
+        "@marblejs/core": "3.1.0",
+        "@marblejs/middleware-body": "3.1.0",
+        "@marblejs/middleware-cors": "3.1.0",
+        "@marblejs/middleware-io": "3.1.0",
+        "@marblejs/middleware-logger": "3.1.0",
+        "@marblejs/middleware-multipart": "3.1.0",
+        "fp-ts": "^2.5.4",
+        "io-ts": "^2.2.1",
+        "io-ts-types": "^0.5.6",
         "monocle-ts": "^2.0.0",
         "newtype-ts": "^0.3.2",
         "rxjs": "^6.5.4"
     },
     "devDependencies": {
-        "@types/node": "^13.1.2",
-        "npm-check-updates": "^4.0.1",
-        "typescript": "^3.7.4"
+        "@types/node": "^13.13.4",
+        "npm-check-updates": "^4.1.2",
+        "typescript": "^3.8.3"
     }
 }
